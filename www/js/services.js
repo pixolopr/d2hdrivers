@@ -21,26 +21,48 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
-        sendsms: function (number,  name) {
-            return $http.get("http://alerts.solutionsinfini.com/api/web2sms.php?workingkey=15459g72ev3rezt7938tp&username=equalaccts&password=vudUhE$up@7u&to="+number+"&sender=DIALTO&message=You have recieved an inquiry from "+name, {
+        sendsms: function (number, name) {
+            return $http.get("http://alerts.solutionsinfini.com/api/web2sms.php?workingkey=15459g72ev3rezt7938tp&username=equalaccts&password=vudUhE$up@7u&to=" + number + "&sender=DIALTO&message=You have recieved an inquiry from " + name, {
                 params: {}
             });
         },
         getdriverprofile: function (id) {
-            return $http.get(adminurl + "register/getdriverprofile" , {
+            return $http.get(adminurl + "register/getdriverprofile", {
                 params: {
                     id: id
                 }
             });
         },
-        
-        getallvendorvehicles: function(id){
+        getvendorprofile: function (id) {
+            return $http.get(adminurl + "register/getvendorprofile", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        inquiriesbyvendorid: function (id) {
+            return $http.get(adminurl + "inquiry/inquiriesbyvendorid", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        inquiriesbydriverid: function (id) {
+            return $http.get(adminurl + "inquiry/inquiriesbydriverid", {
+                params: {
+                    id: id
+                }
+            });
+        },
+
+
+        getallvendorvehicles: function (id) {
             return $http.get(adminurl + "register/getallvendorvehicles", {
                 params: {
                     id: id
                 }
             })
         },
-        
+
     }
 });

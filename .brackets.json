@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/xampp/htdocs/d2hdrivers/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js",
+        "C:/xampp/htdocs/d2hdrivers/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js",
+        "C:/xampp/htdocs/d2hdrivers/www/js/services.js"
+    ]
+}

@@ -5,10 +5,11 @@
     </ion-nav-bar>
     <ion-content>
         <div style="width: 100%;" ng-if="type=='driver'">
-            <img src="img/car.jpg" style="width: 100%;">
+            <img src="{{imagepath + profiledetails.image}}" style="width: 100%;">            
         </div>
         <div ng-if="type=='vendor'" class="textcenter">
-            <img src="img/car_display_pic.png" style="width:50%;">
+            <img src="{{imagepath}}" style="width:50%;">
+            
         </div>
         <div class="textcenter">
             <div>
@@ -40,12 +41,12 @@
                     </div>
                     <div class="col col-33 textcenter" ng-if="type == 'vendor'">
                         <img src="img/profilecar.png" style="width: 75%;">
-                        <p>Tourist Operator</p>
+                        <p>{{profiledetails.type}}</p>
                         <!--<p class="marginminus10">Operator</P>-->
                     </div>
                 </div>
             </div>
-            <div class="margin10" ng-if="vendor==true">
+            <div class="margin10" ng-if="type==vendor">
                 <button class="button button-energized" style="width:90% !important;" ng-click="gotolistcar()">
                     List Cars
                 </button>

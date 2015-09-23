@@ -117,8 +117,26 @@ angular.module('starter.controllers', [])
 
 
     })
-    .controller('inquiriesCtrl', function ($scope, $stateParams) {
+    .controller('inquiriesCtrl', function ($scope, $stateParams, MyServices) {
 
+        $scope.type = "driver";
+
+        var inquiriesbyvendoridsuccess = function (data, status) {
+            console.log(data);
+            $scope.inquirylist = data;
+        };
+        var inquiriesbyvendoriderror = function (data, status) {
+            console.log(status)
+        };
+
+        //GET INQUIRIES BY ID MYSERVICES
+
+        if ($scope.type == "vendor") {
+            MyServices.inquiriesbyvendorid(220).success(inquiriesbyvendoridsuccess).error(inquiriesbyvendoriderror);
+        } else {
+            console.log('error');
+            MyServices.inquiriesbydriverid(4249).success(inquiriesbyvendoridsuccess).error(inquiriesbyvendoriderror);
+        };
 
     })
     .controller('profileCtrl', function ($scope, $stateParams, $location, MyServices) {
@@ -133,16 +151,27 @@ angular.module('starter.controllers', [])
 
         //GET DRIVER PROFILE DETAILS
         var getdriverprofilesuccess = function (data, status) {
+            if ($scope.type == "driver") {
+                $scope.imagepath = "http://dial2hire.com/images/" + data.vtype + "_images/";
+            } else {
+                /* if(data.)*/
+                $scope.imagepath = "img/" + data.type + ".png";
+            };
+
             console.log(data);
             $scope.profiledetails = data;
+
         };
         var getdriverprofileerror = function (data, status) {
             console.log(status);
         };
 
-        MyServices.getdriverprofile(1).success(getdriverprofilesuccess).error(getdriverprofileerror);
+        if ($scope.type == "driver") {
+            MyServices.getdriverprofile(1).success(getdriverprofilesuccess).error(getdriverprofileerror);
+        } else {
 
-
+            MyServices.getvendorprofile(220).success(getdriverprofilesuccess).error(getdriverprofileerror);
+        };
     })
     .controller('carlistCtrl', function ($scope, $stateParams, $location, MyServices) {
         $scope.active = true;

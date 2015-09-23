@@ -7,16 +7,16 @@
 
         <ion-list class="vlist">
            
-            <ion-item click-for-options class="padbox">
+            <ion-item click-for-options class="padbox" ng-repeat="inquiry in inquirylist">
                 <div class="row">
                     <div class="col col-10 inqindex">
-                        1:
+                        {{$index+1 }}
                     </div>
                     <div class="col col-80">
-                        <div style="font-size: 30px;">Abhay Amin</div>
+                        <div style="font-size: 30px;">{{inquiry.name}}</div>
                         <div style="margin-top: 5%;">
-                            <p>From : ghatkopar</p>
-                            <p> To : Andheri</p>                            
+                            <p>From : {{inquiry.fromloc}}</p>
+                            <p> To : {{inquiry.toloc}}</p>                            
                             <p class="orangecolor">Vehicle Code : A2306</p>
                         </div>
                     </div>
@@ -30,83 +30,8 @@
                     </div>                    
                 </div>
                 <ion-option-button class="button-balanced">CALL</ion-option-button>
-                <span class="item-note margin-7"><i class="ion-ios-clock-outline"></i> 23 Aug 15 6:30</span>
-            </ion-item>
-            <ion-item click-for-options class="padbox">
-                <div class="row">
-                    <div class="col col-10 inqindex">
-                        2:
-                    </div>
-                    <div class="col col-80">
-                        <div style="font-size: 30px;">Abhay Amin</div>
-                        <div style="margin-top: 5%;">
-                            <p>From : ghatkopar</p>
-                            <p> To : Andheri</p>                            
-                            <p class="orangecolor">Vehicle Code : A2306</p>
-                        </div>
-                    </div>
-                    <div class="col col-10">
-                        <label class="toggle">
-                            <input type="checkbox">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <ion-option-button class="button-balanced">CALL</ion-option-button>
-                <span class="item-note margin-7"><i class="ion-ios-clock-outline"></i> 23 Aug 15 6:30</span>
-            </ion-item>
-            <ion-item click-for-options class="padbox">
-                <div class="row">
-                    <div class="col col-10 inqindex">
-                        3:
-                    </div>
-                    <div class="col col-80">
-                        <div style="font-size: 30px;">Abhay Amin</div>
-                        <div style="margin-top: 5%;">
-                            <p>From : ghatkopar</p>
-                            <p> To : Andheri</p>                            
-                            <p class="orangecolor">Vehicle Code : A2306</p>
-                        </div>
-                    </div>
-                    <div class="col col-10">
-                        <label class="toggle">
-                            <input type="checkbox">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <ion-option-button class="button-balanced">CALL</ion-option-button>
-                <span class="item-note margin-7"><i class="ion-ios-clock-outline"></i> 23 Aug 15 6:30</span>
-            </ion-item>
-            <ion-item class="padbox">
-                <div class="row">
-                    <div class="col col-10 inqindex">
-                        4:
-                    </div>
-                    <div class="col col-80">
-                        <div style="font-size: 30px;">Abhay Amin</div>
-                        <div style="margin-top: 5%;">
-                            <p>From : ghatkopar</p>
-                            <p> To : Andheri</p>                            
-                            <p class="orangecolor">Vehicle Code : A2306</p>
-                        </div>
-                    </div>
-                    <div class="col col-10">
-                        <label class="toggle">
-                            <input type="checkbox">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <ion-option-button class="button-balanced">CALL</ion-option-button>
-                <span class="item-note margin-7"><i class="ion-ios-clock-outline"></i> 23 Aug 15 6:30</span>
-            </ion-item>
+                <span class="item-note margin-7"><i class="ion-ios-clock-outline"></i> {{inquiry.date}}</span>
+            </ion-item>            
         </ion-list>
     </ion-content>
 </ion-view>
