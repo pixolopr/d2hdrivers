@@ -1,0 +1,48 @@
+/* Empty. Add your own CSS if you like */
+
+.dashbox1 {
+    text-align: center;
+    border: 2px solid #0079c1;
+    border-radius: 3px;
+}
+
+.verticlemargin {
+    margin-bottom: 12px;
+}
+
+.bluebgcolor {
+    background-color: #0079c1 !important;
+    color: white !important;
+}
+
+.dashimage {
+    width: 60%;
+    margin-top: 7%;
+}
+
+.available {
+    background-image: url("../img/onduty.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.notavailable {
+    background-image: url("../img/offroad.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid #9B9D9F !important;
+}
+
+.free {
+    background-image: url("../img/forhire.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid #9B9D9F !important;
+}
+
+.busy {
+    background-image: url("../img/busy.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid red !important;
+}

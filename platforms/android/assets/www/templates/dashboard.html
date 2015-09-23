@@ -1,0 +1,55 @@
+<ion-view view-title="Dashboard">
+    <ion-nav-bar class="bar-energized ">
+
+    </ion-nav-bar>
+    <ion-content>
+        <div class="row verticlemargin">
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1" ng-class="{available:available, notavailable:!available}" ng-click="changeavailabilitystatus()">
+                </div>
+            </div>
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1" ng-class="{busy:busy, free:!busy}" ng-click="changebusystatus()">
+                    <div class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row verticlemargin">
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1 bluebgcolor" ng-click="updatelocation()">
+                    <div>
+                        <img class="dashimage" src="img/location.png">
+                        <h5 class="bluebgcolor">UPDATE LOCATION</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1 bluebgcolor" ng-click="gotoinquiries()">
+                    <div>
+                        <img class="dashimage" src="img/inquries.png">
+                        <h5 class="bluebgcolor">INQUIRIES</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row verticlemargin">
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1 bluebgcolor" ng-click="gotoaccount()">
+                    <div>
+                        <img class="dashimage" src="img/account.png">
+                        <h5 class="bluebgcolor">ACCOUNT</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50 dashbox">
+                <div class="row dashbox1 bluebgcolor" ng-click="gotoprofile()">
+                    <div>
+                        <img class="dashimage" src="img/profile.png">
+                        <h5 class="bluebgcolor">PROFILE</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

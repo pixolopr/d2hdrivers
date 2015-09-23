@@ -1,0 +1,193 @@
+/* Empty. Add your own CSS if you like */
+
+.dashbox1 {
+    text-align: center;
+    border: 2px solid #0079c1;
+    border-radius: 3px;
+}
+
+.verticlemargin {
+    margin-bottom: 12px;
+}
+
+.bluebgcolor {
+    background-color: #0079c1 !important;
+    color: white !important;
+}
+
+.dashimage {
+    width: 60%;
+    margin-top: 7%;
+}
+
+.available {
+    background-image: url("../img/onduty.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.notavailable {
+    background-image: url("../img/offroad.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid #9B9D9F !important;
+}
+
+.free {
+    background-image: url("../img/forhire.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid #9B9D9F !important;
+}
+
+.busy {
+    background-image: url("../img/busy.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 2px solid red !important;
+}
+
+.callbutton {
+    padding-top: 10%;
+    text-align: center;
+}
+
+.inqindex {
+    font-size: x-large;
+}
+
+.orangecolor {
+    color: #F9790B !important;
+}
+
+.pad {
+    padding: 2% !important;
+}
+
+.textcenter {
+    text-align: center !important;
+}
+
+.profilediv {
+    background-color: #F5F3F3;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.greycolor {
+    color: #4d4b4b !important;
+}
+
+.loginbg {
+    background: url(../img/bg2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.thankyou {
+    margin-top: 4vh;
+    font-weight: 200;
+    color: white;
+    font-size: large;
+}
+
+.thankyou2 {
+    font-weight: 100;
+    color: #060606;
+}
+
+.thankyou3 {
+    font-weight: 100;
+    color: #060606;
+}
+
+.entercode {
+    border-color: red !important;
+    color: red !important;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+.otpbg {
+    background-color: #F58220;
+}
+
+.resendbutton {
+    border-color: white;
+    background: transparent;
+    color: white;
+}
+
+.fontaccount {
+    display: inline;
+    font-size: 450%;
+}
+
+.vehiclecodediv {
+    background-color: #F9790B;
+    color: white;
+    text-align: center;
+}
+
+.prefroute {
+    font-size: 0.7em;
+    background-color: beige;
+    margin-top: 5px;
+    padding: 6%;
+    text-align: center;
+}
+
+.vehicleimagediv {
+    border-right: 1px solid #D5C8BD;
+    height: 16vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vendorlist {
+    padding: 1%;
+}
+
+.profile-p {
+    font-size: 80% !important;
+}
+
+.margin10 {
+    margin: 10% !important;
+}
+
+.marginminus10 {
+    margin: -10% !important;
+}
+
+.clfontsize {
+    font-size: x-small !important;
+}
+
+.marginminus7 {
+    margin-right: -2% !important;
+}
+
+.badgeposition {
+    display: inherit !important;
+    position: inherit !important;
+}
+
+.padtop4 {
+    padding-top: 4% !important;
+}
+
+.marginleft15 {
+    margin-left: 15% !important;
+}
+
+.padbox .item-content {
+    padding: 5px 25px 5px 5px !important;
+}
+
+.margin-7 {
+    margin-top: -7%;
+}
