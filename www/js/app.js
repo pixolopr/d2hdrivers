@@ -107,4 +107,63 @@ angular.module('starter', ['ionic', 'starter.controllers', 'myservices'])
         });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/dashboard');
-});
+})
+.directive('clickForOptions', ['$ionicGesture', function ($ionicGesture) {
+    return {
+        restrict: 'A',
+
+
+
+        link: function (scope, element, attrs) {
+            $ionicGesture.on('tap', function (e) {
+
+                /* Grab all list items -Content and Buttons */
+                var list = document.querySelector('.vlist');
+                var contentarray = list.querySelectorAll(".item-content");
+                var buttonsarray = list.querySelectorAll(".item-options");
+
+                // Grab the content
+                var content = element[0].querySelector('.item-content');
+
+                // Grab the buttons and their width
+                var buttons = element[0].querySelector('.item-options');
+
+                if (!buttons) {
+                    console.log('There are no option buttons');
+                    return;
+                }
+                var buttonsWidth = buttons.offsetWidth;
+
+                ionic.requestAnimationFrame(function () {
+                    content.style[ionic.CSS.TRANSITION] = 'all ease-out .25s';
+
+                    //Remove class after 250ms
+                    var removeclass = function (item) {
+                        setTimeout(function () {
+                            item.classList.add('invisible');
+                        }, 250);
+                    };
+
+                    //Iterate through all contents
+                    for (i = 0; i < contentarray.length; i++) {
+                        if (!buttonsarray[i].classList.contains('invisible')) {
+                            contentarray[i].style[ionic.CSS.TRANSFORM] = '';
+                            removeclass(buttonsarray[i]);
+                        };
+                    };
+
+                    if (!buttons.classList.contains('invisible')) {
+                        content.style[ionic.CSS.TRANSFORM] = '';
+                        setTimeout(function () {
+                            buttons.classList.add('invisible');
+                        }, 250);
+                    } else {
+                        buttons.classList.remove('invisible');
+                        content.style[ionic.CSS.TRANSFORM] = 'translate3d(-' + buttonsWidth + 'px, 0, 0)';
+                    };
+                });
+
+            }, element);
+        }
+    };
+           }]);
