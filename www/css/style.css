@@ -191,3 +191,8 @@
 .margin-7 {
     margin-top: -7%;
 }
+
+.wallet {
+    font-size: 6em;
+    color: rgba(138, 134, 134, 0.31);
+}

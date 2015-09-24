@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
     })
     .controller('inquiriesCtrl', function ($scope, $stateParams, MyServices) {
 
-        $scope.type = "driver";
+        $scope.type = "vendor";
 
         var inquiriesbyvendoridsuccess = function (data, status) {
             console.log(data);
@@ -146,7 +146,7 @@ angular.module('starter.controllers', [])
             $location.path('/app/carlist');
         };
 
-        $scope.type = "driver";
+        $scope.type = "vendor";
 
 
         //GET DRIVER PROFILE DETAILS
