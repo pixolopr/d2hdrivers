@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('dashboardCtrl', function ($scope, $location, $ionicLoading, $interval) {
+.controller('dashboardCtrl', function ($scope, $location, $ionicLoading, $interval, MyServices) {
 
 
     var wid = $(".dashbox").width();
@@ -50,7 +50,7 @@ angular.module('starter.controllers', [])
 
 
     //LOADING FUNCTIONS//
-    var showloading = function (message) {
+    /*var showloading = function (message) {
         $ionicLoading.show({
             template: message
         });
@@ -58,46 +58,127 @@ angular.module('starter.controllers', [])
     var hideloading = function () {
         $ionicLoading.hide();
     };
+*/
+
+    //$scope.available = true;
 
 
-    $scope.available = true;
-    $scope.busy = true;
-
+    // GO TO INQUIRY PAGE
     $scope.gotoinquiries = function () {
         $location.path("/app/inquiries");
     };
+    // GO TO ACCOUNT PAGE
     $scope.gotoaccount = function () {
         $location.path("/app/account");
     };
+    // GO TO ACCOUNT PAGE
     $scope.gotoprofile = function () {
         $location.path("/app/profile");
     };
-
-    $scope.changeavailabilitystatus = function () {
-        showloading("Updating status");
-        $scope.available = !$scope.available;
-        $interval(hideloading, 1000, 1);
-        if ($scope.available == false) {
-            $scope.busy = false;
-        };
-    };
-    $scope.changebusystatus = function () {
-        showloading("Updating status");
-        $scope.busy = !$scope.busy;
-        $interval(hideloading, 1000, 1);
-    };
+    // GO TO UPDATE LOCATION
     $scope.updatelocation = function () {
         showloading("Updating your location...");
         $interval(hideloading, 1000, 1);
     };
 
+    // INITIAL VALUE FOR ACTIVE STATUS
+    var initialactivestatussuccess = function (data, status) {
+        console.log(data);
+        if (data == "true") {
+            $scope.active = true;
+        };
+        if (data == "false") {
+            $scope.active = false;
+        };
+    };
+    var initialactivestatuserror = function () {
+        console.log(status)
+    };
+    MyServices.initialactivestatus(1).success(initialactivestatussuccess).error(initialactivestatuserror);
+
+    // INITIAL VALUE FOR AVAILABLE STATUS
+    var initiavailablestatussuccess = function (data, status) {
+        console.log(data);
+        if (data == "true") {
+            $scope.available = true;
+        };
+        if (data == "false") {
+            $scope.available = false;
+        };
+    };
+    var initiavailablestatuserror = function () {
+        console.log(status)
+    };
+    MyServices.initiavailablestatus(1).success(initiavailablestatussuccess).error(initiavailablestatuserror);
+
+    ///////////////////////////////////////////////////////////////
+    // SUCCESS VAR FOR changeavailabilitystatus
+    var changeactivestatussuccess = function (data, status) {
+        console.log(data);
+        $ionicLoading.hide();
+        if (data == "true") {
+            $scope.active = true;
+        };
+        if (data == "false") {
+            $scope.active = false;
+        };
+    };
+    // ERROR VAR FOR changeavailabilitystatus
+    var changeactivestatuserror = function (data, status) {
+        $ionicLoading.hide();
+        console.log(status)
+    };
+
+    $scope.changeactivestatus = function () {
+        $ionicLoading.show({
+            template: "Loading"
+        });
+        MyServices.changeactivestatus(1).success(changeactivestatussuccess).error(changeactivestatuserror);
+    };
+    //////////////////////////////////////////////////////////////////////////
+
+
+    // SUCCESS VAR FOR updateactivestatus
+    var changeavailabilitystatussuccess = function (data, status) {
+        console.log(data);
+        $ionicLoading.hide();
+        if (data == "true") {
+            $scope.available = true;
+        };
+        if (data == "false") {
+            $scope.available = false;
+        };
+    };
+    //ERROR VAR FOR updateactivestatus
+    var changeavailabilitystatuserror = function (data, status) {
+        $ionicLoading.hide();
+        console.log(status);
+    };
+
+    $scope.changeavailabilitystatus = function () {
+        $ionicLoading.show({
+            template: "Loading"
+        });
+        MyServices.changeavailabilitystatus(1).success(changeavailabilitystatussuccess).error(changeavailabilitystatuserror);
+    };
+    /////////////////////////////////////////////////////////////////////////////////
 
 })
 
 
 
-.controller('accountCtrl', function ($scope, $stateParams) {
+.controller('accountCtrl', function ($scope, $stateParams, MyServices) {
 
+        var vendoraccountsuccess = function (data, status) {
+            console.log(data)
+            $scope.account = data;
+        };
+
+        var vendoraccounterror = function (data, status) {
+            console.log(status)
+        };
+
+        MyServices.vendoraccount(9819042457).success(vendoraccountsuccess).error(vendoraccounterror);
 
     })
     .controller('signinCtrl', function ($scope, $stateParams, $location) {

@@ -190,9 +190,15 @@
 
 .margin-7 {
     margin-top: -7%;
+    font-size: 10px !important;
 }
 
 .wallet {
     font-size: 6em;
     color: rgba(138, 134, 134, 0.31);
+}
+
+.inquiry-name {
+    font-weight: bold !important;
+    font-size: 25px !imporrant;
 }

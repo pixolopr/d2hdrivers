@@ -5,11 +5,11 @@
     <ion-content>
         <div class="row verticlemargin">
             <div class="col col-50 dashbox">
-                <div class="row dashbox1" ng-class="{available:available, notavailable:!available}" ng-click="changeavailabilitystatus()">
+                <div class="row dashbox1" ng-class="{available:active, notavailable:!active}" ng-click="changeactivestatus()">
                 </div>
             </div>
             <div class="col col-50 dashbox">
-                <div class="row dashbox1" ng-class="{busy:busy, free:!busy}" ng-click="changebusystatus()">
+                <div class="row dashbox1" ng-class="{busy:!available, free:available}" ng-click="changeavailabilitystatus()">
                     <div class="">
                     </div>
                 </div>

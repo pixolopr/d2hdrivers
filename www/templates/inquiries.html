@@ -7,14 +7,14 @@
 
         <ion-list class="vlist">
            
-            <ion-item click-for-options class="padbox" ng-repeat="inquiry in inquirylist">
+            <ion-item class="padbox" ng-repeat="inquiry in inquirylist">
                 <div class="row">
-                    <div class="col col-10 inqindex">
+                    <div class="col col-10 inquiry-name">
                         {{$index+1 }}
                     </div>
                     <div class="col col-80">
-                        <div style="font-size: 30px;">{{inquiry.name}}</div>
-                        <div style="margin-top: 5%;">
+                        <div class="inquiry-name">{{inquiry.name}}</div>
+                        <div style="margin-top: 1%;">
                             <p>From : {{inquiry.fromloc}}</p>
                             <p> To : {{inquiry.toloc}}</p>                            
                             <p class="orangecolor">Vehicle Code : A2306</p>

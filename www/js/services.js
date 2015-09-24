@@ -54,7 +54,44 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
-
+        // INITIAL VALUE FOR ACTIVE STATUS
+        initialactivestatus: function (id) {
+            return $http.get(adminurl + "vehicle_details/getactivestatus", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        // INITIAL VALUE FOR AVAILABLE STATUS
+        initiavailablestatus: function (id) {
+            return $http.get(adminurl + "vehicle_details/getavailibilitystatus", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        //CHANGE ACTIVE STATUS BY DRIVER ID
+        changeactivestatus: function (id) {
+            return $http.get(adminurl + "vehicle_details/changeactivestatus", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        changeavailabilitystatus: function (id) {
+            return $http.get(adminurl + "vehicle_details/changeavailibilitystatus", {
+                params: {
+                    id: id
+                }
+            });
+        },
+        vendoraccount: function (phone) {
+            return $http.get(adminurl + "register/getaccount", {
+                params: {
+                    phone: phone
+                }
+            });
+        },
 
         getallvendorvehicles: function (id) {
             return $http.get(adminurl + "register/getallvendorvehicles", {
