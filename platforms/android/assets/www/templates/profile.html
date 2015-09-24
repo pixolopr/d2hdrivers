@@ -4,6 +4,54 @@
         </ion-nav-back-button>
     </ion-nav-bar>
     <ion-content>
-        <h1>PROFILE</h1>
+        <div style="width: 100%;" ng-if="type=='driver'">
+            <img src="{{imagepath + profiledetails.image}}" style="width: 100%;">            
+        </div>
+        <div ng-if="type=='vendor'" class="textcenter">
+            <img src="{{imagepath}}" style="width:50%;">
+            
+        </div>
+        <div class="textcenter">
+            <div>
+                <h3 class="greycolor">ABHAY AMIN</h3>
+            </div>
+            <div>
+                <h4 class="greycolor">9820840946</h4>
+            </div>
+        </div>
+        <div class="textcenter" style="width:100%">
+            <!-- <div class="col col-10">
+               
+           </div>-->
+            <div class="profilediv">
+                <div class="row">
+                    <div class="col col-33 textcenter">
+                        <img src="img/vechiclecode.png" style="width: 75%;">
+                        <p>A3603</p>
+                    </div>
+                    <div class="col col-33 textcenter">
+                        <img src="img/inquiryno.png" style="width: 75%;">
+                        <P>{{ profiledetails.inquiries }}</P>
+                    </div>
+                    <!--ng-if="CONDITION"-->
+                    <div class="col col-33 textcenter" ng-if="type == 'driver'">
+                        <img src="img/profilecar.png" style="width: 75%;">
+                        <p class="">{{ profiledetails.make }}</p>
+                        <P class="marginminus10">{{ profiledetails.model }}</p>
+                    </div>
+                    <div class="col col-33 textcenter" ng-if="type == 'vendor'">
+                        <img src="img/profilecar.png" style="width: 75%;">
+                        <p>{{profiledetails.type}}</p>
+                        <!--<p class="marginminus10">Operator</P>-->
+                    </div>
+                </div>
+            </div>
+            <div class="margin10" ng-if="type==vendor">
+                <button class="button button-energized" style="width:90% !important;" ng-click="gotolistcar()">
+                    List Cars
+                </button>
+            </div>
+        </div>
+        
     </ion-content>
 </ion-view>

@@ -1,0 +1,35 @@
+<ion-view view-title="Car List">
+    <ion-nav-bar class="bar-energized ">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-list>
+           
+            <div class="row item" ng-click="gotoprofile(car.id)" ng-repeat="car in carlist">
+                <div class="col col-33">
+                    <img src="{{imagepath + car.image}}" style="width:100%">
+                </div>
+                <div class="col ">
+                    <h3>{{car.make}}</h3>
+                    <p>{{car.model}}</p>
+                    <p><strong>inquiries</strong> : {{car.inquiries}}</p>
+                </div>
+                <div class="col col-25  textcenter padtop4">
+                    <div>
+                        <span class="badge badge-balanced badgeposition " ng-if="car.activestatus==1">ACTIVE</span>
+                    </div>
+                    <div>
+                        <span class="badge badge-assertive badgeposition" ng-if="car.activestatus==0" style="margin-top:7%;">INACTIVE</span>
+                    </div>
+                    <div>
+                        <span class="badge badge-balanced badgeposition " ng-if="car.availabilitystatus==1" style="margin-top:7%;">FOR HIRE</span>
+                    </div>
+                    <div><span class="badge badge-assertive badgeposition" ng-if="car.availabilitystatus==0" style="margin-top:7%;">HIRED</span>
+                    </div>
+                </div>
+            </div>
+
+        </ion-list>
+    </ion-content>
+</ion-view>
